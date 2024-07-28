@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: booksdb
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     volumes:
@@ -19,7 +19,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgres://postgres:secret@db:5432/booksdb?sslmode=disable
+      DATABASE_URL: postgres://postgres:secret@db:5432/postgres?sslmode=disable
 
 volumes:
   postgres_data:
